@@ -16,6 +16,7 @@ test('Verify Amazon Login Page', async ({ page }) => {
     await loginPage.enterPassword();
     await loginPage.login();
     await loginPage.clickHammerButton();
+     //await loginPage.clickHammerButton();
 
 
     // Verify heading
