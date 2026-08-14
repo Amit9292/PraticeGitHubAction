@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
-const { AmazonLoginPage } = require('../../pages/Signin/AmazonLoginPage');
+const { AmazonLoginPage } = require('../../pages/Signin/AmazonLoginPage'); 
+// login
 
 test('Verify Amazon Login Page', async ({ page }) => {
 
