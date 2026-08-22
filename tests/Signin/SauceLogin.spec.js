@@ -1,12 +1,12 @@
 const { test, expect } = require('@playwright/test');
 
-const { AmazonLoginPage } = require('../../pages/Signin/AmazonLoginPage'); 
+const { SauceDemoLoginPage } = require('../../pages/Signin/SauceDemoLoginPage'); 
 // login
 
-test('Verify Amazon Login Page', async ({ page }) => {
+test('Verify Sauce Login Page', async ({ page }) => {
 
     // Create Page Object
-    const loginPage = new AmazonLoginPage(page);
+    const loginPage = new SauceDemoLoginPage(page);
 
 
     // Open Amazon Login Page

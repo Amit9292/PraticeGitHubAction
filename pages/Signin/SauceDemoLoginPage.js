@@ -1,7 +1,6 @@
 require('dotenv').config();
 
-
-class AmazonLoginPage {
+class SauceDemoLoginPage {
 
     constructor(page) {
 
@@ -51,4 +50,4 @@ class AmazonLoginPage {
 }
 
 
-module.exports = { AmazonLoginPage };
+module.exports = { SauceDemoLoginPage};
