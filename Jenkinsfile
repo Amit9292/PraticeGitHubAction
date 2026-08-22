@@ -11,7 +11,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm ci'
+                bat 'npm ci'
             }
         }
 
@@ -28,9 +28,18 @@ pipeline {
                         variable: 'BASE_URL'
                     )
                 ]) {
-                    sh 'npx playwright test'
+                    bat 'npx playwright test'
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts(
+                artifacts: 'playwright-report/**',
+                allowEmptyArchive: true
+            )
         }
     }
 }
