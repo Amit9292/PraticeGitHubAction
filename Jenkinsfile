@@ -15,19 +15,28 @@ pipeline {
             }
         }
 
+        stage('Install Playwright') {
+            steps {
+                bat 'npx playwright install'
+            }
+        }
+
         stage('Run Playwright Tests') {
             steps {
+
                 withCredentials([
-                    usernamePassword(
-                        credentialsId: 'playwright-login',
-                        usernameVariable: 'TEST_USERNAME',
-                        passwordVariable: 'TEST_PASSWORD'
-                    ),
                     string(
-                        credentialsId: 'playwright-base-url',
-                                variable: 'SAUCE_URL'
+                        credentialsId: 'sauce-url',
+                        variable: 'SAUCE_URL'
+                    ),
+
+                    usernamePassword(
+                        credentialsId: 'sauce-login',
+                        usernameVariable: 'SAUCE_USERNAME',
+                        passwordVariable: 'SAUCE_PASSWORD'
                     )
                 ]) {
+
                     bat 'npx playwright test'
                 }
             }
