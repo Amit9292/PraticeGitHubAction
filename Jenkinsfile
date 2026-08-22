@@ -25,7 +25,7 @@ pipeline {
                     ),
                     string(
                         credentialsId: 'playwright-base-url',
-                        variable: 'BASE_URL'
+                                variable: 'SAUCE_URL'
                     )
                 ]) {
                     bat 'npx playwright test'
